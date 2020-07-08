@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Rock Paper Scissors Game to be Displayed in the console</h2>
+
+</body>
+<script>
+
+    let playerSelection;
+    let draws = ["rock", "paper", "scissors"];
+    let computerdraw;
+    let playerscoreBoard = 0;
+    let computerscoreBoard = 0;
+
+    function theGame(playerSelection, computerdraw) {
+        computerdraw = draws[Math.floor(Math.random() * 3)];
+        playerSelection = prompt("rock, paper or scissors?");
+        if (draws.includes(playerSelection)) {
+
+            if (playerSelection === "rock" && computerdraw === "paper") {
+                console.log("You lose paper covers rock!");
+                computerscoreBoard += 1;
+            } else if (playerSelection === "scissors" && computerdraw === "rock") {
+                console.log("You lose rock crushes scissors!");
+                computerscoreBoard += 1;
+            } else if (playerSelection === "paper" && computerdraw === "scissors") {
+                console.log("You lose scissors cut paper");
+                computerscoreBoard += 1;
+            } else if (playerSelection === "paper" && computerdraw === "rock") {
+                console.log("You win paper covers rock!")
+                playerscoreBoard += 1;
+            } else if (playerSelection === "rock" && computerdraw === "scissors") {
+                console.log("You win rock crushes scissors!");
+                playerscoreBoard += 1;
+            } else if (playerSelection === "scissors" && computerdraw === "paper") {
+                console.log("You win scissors cut paper!");
+                playerscoreBoard += 1;
+            } else if (playerSelection === computerdraw) {
+                console.log("draw again");
+
+
+            }
+        } else {
+            console.log("please enter rock, paper, or scissors")
+        }
+
+
+    }
+    function playGame() {
+        theGame(playerSelection, computerdraw);
+        theGame(playerSelection, computerdraw);
+        theGame(playerSelection, computerdraw);
+        theGame(playerSelection, computerdraw);
+        theGame(playerSelection, computerdraw);
+
+    }
+    function finalScore() {
+        playGame();
+        if (playerscoreBoard > computerscoreBoard) {
+            console.log("Congratulations You won this Game");
+        } else if (playerscoreBoard === computerscoreBoard) {
+            console.log("re-match");
+        } else if (computerscoreBoard > playerscoreBoard) {
+            console.log("Sorry computer won this game");
+        }
+    }
+    finalScore();
+
+</script>
+
+</html>
