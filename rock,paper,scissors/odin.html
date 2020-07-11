@@ -5,11 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
+    <style>
+        .button2 {
+            border-radius: 50%;
+            font-size: 70px;
+            background-color: rgb(223, 129, 92);
+            padding: 12px;
+            margin: 95px 7px 15px 89px;
+        }
+
+        body {
+            background-color: lightblue;
+        }
+
+        .container {
+            margin: 65px 1px 45px 170px;
+            padding: 12px;
+        }
+
+        h2 {
+            margin: 90px 10px 50px 90px;
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    </style>
 
 <body>
     <h2>Rock Paper Scissors Game to be Displayed in the console</h2>
 
+    <div class="container">
+        <button class="button2" id="buttonid" onclick="buttonValue()">rock</button>
+        <button class="button2" onclick="buttonValue()">paper</button>
+        <button class="button2" onclick="buttonValue()">scissors</button>
+    </div>
+    </div>
 </body>
 <script>
 
@@ -18,10 +47,15 @@
     let computerdraw;
     let playerscoreBoard = 0;
     let computerscoreBoard = 0;
+    function buttonValue() {
+        let valU = event.target.textContent;
+        playerSelection = valU;
+    }
 
     function theGame(playerSelection, computerdraw) {
+
         computerdraw = draws[Math.floor(Math.random() * 3)];
-        playerSelection = prompt("rock, paper or scissors?");
+        //playerSelection = this.button.value
         if (draws.includes(playerSelection)) {
 
             if (playerSelection === "rock" && computerdraw === "paper") {
@@ -74,5 +108,6 @@
     finalScore();
 
 </script>
+
 
 </html>
