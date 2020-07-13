@@ -70,8 +70,6 @@
         <button class="button2" onclick="theGame()">scissors</button>
     </div>
     </div>
-
-
     <div>
         <h1>Final Score </h1> <span id="result"> - </span>
     </div>
@@ -88,10 +86,7 @@
     let scorerP = document.getElementById("player").innerText;
     let scorerC = document.getElementById("computer").innerText;
 
-
-
     function theGame(playerSelection, computerdraw) {
-
         computerdraw = draws[Math.floor(Math.random() * 3)];
         let valU = event.target.textContent;
         playerSelection = valU;
@@ -102,7 +97,6 @@
                 document.getElementById("player").innerText = playerscoreBoard;
                 document.getElementById("computer").innerText = computerscoreBoard;
                 document.getElementById("comput").innerText = computerdraw;
-
 
             } else if (playerSelection === "scissors" && computerdraw === "rock") {
                 document.getElementById("current").innerText = "Computer scores! rock crushes scissors!";
@@ -142,12 +136,10 @@
 
             }
 
-
         } else if (playerscoreBoard >= 5 || computerscoreBoard >= 5) {
             alert("Game Over");
             finalScore();
         }
-
     }
 
     function finalScore() {
@@ -162,14 +154,11 @@
             document.getElementById("result").innerText = "Sorry the computer won this game :(";
 
         }
-
-
     }
 
     function restart() {
         location.reload()
     }
 </script>
-
 
 </html>
